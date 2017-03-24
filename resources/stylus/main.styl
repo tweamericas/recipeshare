@@ -1,0 +1,43 @@
+vendor-prefixes ?= webkit moz o ms official
+
+@import '/include/vendor'
+@import '/include/mixins'
+@import guide
+@import '/include/*'
+
+.clear
+  clearfix()
+
+html,
+body
+  margin 0
+  padding 0
+  width 100%
+  height 100%
+  overflow hidden
+  position fixed
+  background-color gc(grey1)
+  color gc(black1)
+  gf(c1)
+
+input, textarea, button
+  color gc(black1)
+  gf(c1)
+
+input[type=range]::-webkit-slider-thumb
+  background-color gc(cyan1)
+
+a, ::selection
+  color gc(black1)
+::selection
+  background-color gc(red1)
+  color gc(white1)
+
+.container
+  max-width 600px
+  height 100%
+  position relative
+  margin auto
+
+@import 'index'
+@import '/page/*'

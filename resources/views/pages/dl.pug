@@ -1,0 +1,13 @@
+extends ../extends/layout
+
+block content
+  .page.page_download
+    .copy=self.config.copy.download.copy
+    .image
+      img(src="/image/" + self.id + ".jpg")
+
+    //.instagram(class=self.ig ? 'on' : 'off')
+      .copy=self.config.copy.download.instagram
+      a.cta(href="instagram://library?AssetPath=")
+        include ../../vector/instagram.svg
+      .clear

@@ -1,0 +1,40 @@
+.page_shares
+  position absolute
+  width 100vw
+  max-width 600px
+  height 75px
+  bottom 0px 
+  z-index 30
+  animation fadeIn 0.2s linear 0s both
+  background-color gc(cyan1)
+  > .close
+    position absolute
+    top -16px
+    right 10px
+    width 15px
+    height 15px
+    background-color gc(beige1)
+    border-radius 50px
+    padding 10px
+    > svg
+      width inherit
+      height inherit
+      > path
+        fill gc(cyan1)
+  > .inner
+    margin 20px 0 20px 0
+    > .sharelist
+      margin 0 40px
+      > .share
+        float left
+        width 25%
+        text-align center
+        > .inner
+          display inline-block
+          width 35px
+          height 35px
+          > svg
+            width inherit
+            height inherit
+            > path, > polygon, > rect, > circle
+              fill gc(beige1)

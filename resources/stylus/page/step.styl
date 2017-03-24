@@ -1,0 +1,87 @@
+.page_step
+  background-color gc(beige1)
+  > .title
+    text-transform uppercase
+    padding 10px 0 10px 20px
+    color gc(brown1)
+  > .cancel
+    cursor pointer
+    float right
+    padding 10px 23px 0 0 
+    color gc(brown1)
+    text-transform uppercase
+  > .image
+    background-color gc(white1)
+    width 100%
+    height 300px
+    background-size cover
+    background-position 50% 50%
+    > .cr-slider-wrap
+      position absolute
+      top 35px
+      left 50%
+      margin-left -225px
+    &.on
+      > .dots
+        display block
+        > .crop
+          display block
+    &.off
+      background-image none !important
+      > .dots
+        display none
+        > .crop
+          display none
+    &.step_1
+      background-image url(/image/placeholders/ingredients.jpg)
+    &.step_2
+      background-image url(/image/placeholders/prepared.jpg)
+    &.step_3
+      background-image url(/image/placeholders/enjoyed.jpg)
+    > .dots
+      border 5px dashed gc(black1)
+      width calc(100% - 30px)
+      height calc(100% - 30px)
+      margin 10px
+      animation scaleInF 0.2s ease-in-out 0.1s both
+      > .crop
+        width 30px
+        height 30px
+        margin 10px 0 0 10px
+        > svg
+          width inherit
+          height inherit
+          > path
+            fill gc(white1)
+
+  > form, > form > input
+    height 0px
+    width 0px
+    visibility hidden
+    > .copy
+      onoff()
+  > .subtitle
+    text-align center
+    color gc(brown1)
+    text-transform uppercase
+    padding 10px
+    gf(h1)
+    > .copy
+      onoff()
+  > .buttons
+    padding 0 10px
+    > .button
+      width 48%
+      animation inFromTop 0.2s linear 0.2s both
+      > .copy
+        margin 3px 0 0 0
+
+  > .instructions
+    animation inFromTop 0.2s linear 0.4s both
+    clear both
+    padding 5px 10px 0 10px
+    gf(c1)
+    > p
+      margin 5px
+      onoff()
+

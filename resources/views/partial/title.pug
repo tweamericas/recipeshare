@@ -1,0 +1,15 @@
+.page.page_title.full.off
+  .inner
+    .logo
+      include ../../vector/logo.svg
+
+    .middle
+      .title=self.config.copy.title.title
+      .textarea
+        textarea(placeholder=self.config.copy.title.placeholder)
+      .chars.off characters&nbsp;&nbsp;
+          span.count 0 of 60
+      .cta.off
+        .copy.on=self.config.copy.title.cta
+        .copy.copyb.off=self.config.copy.title.ctab
+      .clear

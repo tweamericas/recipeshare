@@ -1,0 +1,12 @@
+extends ../extends/layout
+
+block content
+  .page.page_tandc
+    .title !{self.config.copy.tandc.title}
+
+    .sections
+      each section in self.config.copy.tandc.sections
+        p !{section}
+    
+  script.
+    $('html, body').addClass('scroll');

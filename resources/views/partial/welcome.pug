@@ -1,0 +1,12 @@
+.page.page_welcome.full.on
+  .inner
+    .logo
+      include ../../vector/logo.svg
+    .title=self.config.meta.title
+    .intro
+      each line in self.config.copy.welcome.intro
+        p=line
+    .cta=self.config.copy.welcome.cta
+
+    .bottom
+      .copy !{self.config.copy.welcome.copyright}

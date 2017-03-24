@@ -1,0 +1,134 @@
+| !{'\n\n'}
+doctype
+html(lang='en')
+  head
+    if self.share
+      title #{self.share.title}
+    else
+      title #{self.config.meta.title}
+
+    script(type='text/javascript', src='/javascript/vendor.js')
+    script(type='text/javascript', src='/javascript/bundle.js')
+
+    meta(http-equiv="X-UA-Compatible",content="IE=Edge,chrome=1")
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height')
+    
+    meta(name="theme-color",content=self.config.color.hackberry)
+    
+    link(rel='stylesheet',href="/css/vendor.css",type='text/css',media='all')
+    link(rel='stylesheet',href="/css/main.css",type='text/css',media='all')
+
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:100,400,700',rel='stylesheet',type='text/css')
+    meta(name="apple-mobile-web-app-capable",content="yes")
+    
+    include ../partial/ico.pug
+
+    //- google
+    if self.share
+      meta(name='description',content=self.description)
+    else
+      meta(name='description',content=self.config.meta.description)
+
+    meta(name='keywords',content=self.config.meta.keywords)
+
+    if self.image
+      script(type='application/ld+json').
+        {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "url": "#{self.url}",
+          "logo": "#{self.image}"
+        }
+    else
+      script(type='application/ld+json').
+        {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "url": "#{self.config.meta.url}",
+          "logo": "#{self.config.meta.image}"
+        }
+
+    meta(property='fb:app_id',content=self.config.meta.facebook_app_id)
+
+    if self.url
+      meta(property='og:url',content=self.url)
+    else
+      meta(property='og:url',content=self.config.meta.url)
+
+    if self.share
+      meta(property='og:title',content=self.title)
+    else
+      meta(property='og:title',content=self.config.meta.title)
+    if self.image
+      meta(property='og:image',content=self.image)
+      meta(property='og:image:width',content='1000')
+      meta(property='og:image:height',content='525')
+    else
+      meta(property='og:image',content=self.config.meta.image)
+
+    if self.share
+      meta(property='og:description',content=self.description)
+    else
+      meta(property='og:description',content=self.config.meta.description)
+
+    meta(property='og:type',content='website')
+
+    //- twitter
+    meta(name='twitter:card',content='summary_large_image')
+
+    if self.share
+      meta(name='twitter:title',content=self.share.title)
+      meta(name='twitter:description',content=self.twitter_description)
+    else
+      meta(name='twitter:title',content=self.config.meta.title)
+      meta(name='twitter:description',content=self.config.meta.description)
+
+    if self.image
+      meta(name='twitter:image',content=self.image)
+      meta(name='twitter:image:width',content='1000')
+      meta(name='twitter:image:height',content='1000')
+    else
+      meta(name='twitter:image',content=self.config.meta.image)
+      meta(name='twitter:image:width',content='1200')
+      meta(name='twitter:image:height',content='630')
+
+    script(type='text/javascript').
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '#{self.config.meta.tracking_id}', 'auto');
+      ga('require', 'linkid');
+      ga('send', 'pageview');
+
+  body
+    script.
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '#{self.config.meta.facebook_app_id}',
+          xfbml      : false,
+          version    : 'v2.8'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+    body
+      .container
+        include ../partial/spinner
+        include ../partial/notice
+        include ../partial/header
+        block content
+    include ../partial/footer
+
+    script.
+      Index.i()

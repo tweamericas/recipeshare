@@ -1,0 +1,58 @@
+.page
+  onoff()
+  width 100%
+  height calc(100vh - 45px)
+  &.full
+    fullsize()
+    position absolute
+
+.cta
+  cursor pointer
+  text-transform uppercase
+  text-align center
+  padding 10px 20px
+  background-color gc(gold1)
+  color gc(white1)
+
+.logo
+  width 320px
+  height 75px
+  > svg
+    width inherit
+    height inherit
+    > path:last-child
+      fill gc(brown2)
+
+.button
+  cursor pointer
+  padding 10px
+  border none
+  text-transform uppercase
+  gf(c4)
+  &.left
+    float left
+  &.right
+    float right
+  &.cyan
+    background-color gc(cyan1)
+  &.brown
+    background-color gc(brown1)
+  &.red
+    background-color gc(red1)
+    > .copy
+      color gc(white1)
+
+  > .copy
+    color gc(white1)
+    text-align center
+
+  > .icon
+    float right
+    width 20px
+    height 20px
+    > svg
+      width inherit
+      height inherit
+      > path
+        fill gc(white1)
+

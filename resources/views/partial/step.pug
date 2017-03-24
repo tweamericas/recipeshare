@@ -1,0 +1,29 @@
+.page.page_step.off
+  .cancel=self.config.copy.step.cancel
+  .title scale &amp; crop
+  .image.on
+    .clear
+    .dots
+      .crop
+        include ../../vector/crop.svg
+
+  form
+    input.file_input(type="file",name="file",accept="image/gif, image/jpeg, image/png")
+  .subtitle
+    .copy.copy_1.off ingredients
+    .copy.copy_2.off prepared
+    .copy.copy_3.off enjoyed
+  .buttons
+    button.button.left.brown.cta_newimage
+      .icon
+        include ../../vector/picture.svg
+      .copy choose new image
+    button.button.right.cyan.cta_confirm
+      .icon
+        include ../../vector/check.svg
+      .copy confirm changes
+
+  .instructions
+    each value,key in self.config.copy.step.instructions
+      p.instruct.off(class='instruct_' + key) !{value}
+

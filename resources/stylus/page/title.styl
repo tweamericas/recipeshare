@@ -1,0 +1,51 @@
+.page_title
+  background-color gc(beige1)
+  > .inner
+    height 80px
+    margin auto
+    > .logo
+      margin 20px auto
+      width 320px
+      height inherit
+
+    > .middle
+      position absolute
+      top 50%
+      left 50%
+      margin-top -90px
+      margin-left -45%
+      width 90%
+      height 180px
+      > .title
+        padding 0 0 10px 0
+        animation inFromTop 0.2s linear 0.1s both
+      > .textarea
+        animation inFromTop 0.2s linear 0.2s both
+        > textarea
+          border 1px solid gc(black1)
+          width calc(100% - 25px)
+          height 50px
+          padding 10px
+          margin 0
+      > .chars
+        float left
+        margin 10px 0 0 0
+        animation inFromTop 0.2s linear 0.3s both
+        gf(c3)
+        &.on
+          color gc(red1)
+        &.off
+          color gc(black2)
+      > .cta
+        &.off
+          background-color rgba(gc(brown1), 0.5)
+        &.on
+          background-color rgba(gc(brown1), 1)
+        animation inFromTop 0.2s linear 0.3s both
+        float right
+        width 120px
+        margin 10px 0 0 0
+        > .copy
+          onoff()
+
+

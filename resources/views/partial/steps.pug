@@ -1,0 +1,62 @@
+.page.page_steps.off
+  .title
+    .copy please specify a title
+    .edit
+      include ../../vector/edit.svg
+    .clear
+  .step.step_1(data-step=1)
+    .inner
+      .status
+        .pending.on
+          .copys 
+            .copy step
+            .bubble
+              .num 1
+            .copy add image
+        .complete.off
+          .svg
+            include ../../vector/check.svg
+          .clear
+          .copy ingredients
+      .image(style='background-image: url(/image/placeholders/ingredients.jpg)')
+        .copy.on ingredients
+        .edit
+          include ../../vector/edit.svg
+
+  .step.step_2(data-step=2)
+    .inner
+      .status
+        .pending.on
+          .copys 
+            .copy step
+            .bubble
+              .num 2
+            .copy add image
+        .complete.off
+          .svg
+            include ../../vector/check.svg
+          .copy prepared
+      .image(style='background-image: url(/image/placeholders/prepared.jpg)')
+        .copy prepared
+        .edit
+          include ../../vector/edit.svg
+
+  .step.step_3(data-step=3)
+    .inner
+      .status
+        .pending.on
+          .copys 
+            .copy step
+            .bubble
+              .num 3
+            .copy add image
+        .complete.off
+          .svg
+            include ../../vector/check.svg
+          .copy enjoyed
+      .image(style='background-image: url(/image/placeholders/enjoyed.jpg)')
+        .copy enjoyed
+        .edit
+          include ../../vector/edit.svg
+
+  .cta.cta_preview.off preview

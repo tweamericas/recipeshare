@@ -1,0 +1,10 @@
+---
+uploading: 
+ - 'Leveling flour...'
+ - 'Preheating oven...' 
+ - 'Measuring spices...'
+processing: 
+ - 'Preparing glaze...'
+ - 'Prepping garnishes...'
+ - 'Buttering pans...' 
+complete: 'Ready to Share!'

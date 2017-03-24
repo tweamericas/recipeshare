@@ -1,0 +1,62 @@
+.page_preview
+  background-color gc(white1)
+  > .image
+    display block
+    overflow auto
+    height calc(100% - 73px) !important
+    > .cr-slider-wrap
+      position absolute
+      left 50%
+      margin-left -225px
+      margin-top -0px
+    > .cr-boundary
+      > .cr-viewport
+        border none
+        box-shadow none
+
+  > .buttons
+    position absolute
+    bottom 0
+    right 0
+    left 0
+    z-index 10
+
+    > .button
+      float left
+      width 50%
+      padding 10px
+      animation inFromTop 0.2s linear 0.2s both
+
+      > .copy
+        line-height 20px
+        margin 3px 0 0 0
+        gf(c1)
+
+      &:nth-child(1)
+        > .icon 
+          background-color gc(white1)
+          border-radius 50%
+          width 15px
+          height 15px
+          padding 4px
+          > svg 
+            > path
+              fill gc(brown1)
+      &:nth-child(2)
+        animation inFromTop 0.2s linear 0.3s both
+        background-color gc(cyan1)
+        color gc(white1)
+        > .icon 
+          margin  0 25px 0 -25px
+          > svg > path
+            fill gc(white1)
+
+@media all and (min-width: 1px) and (max-width: 1000px)
+  .page_preview
+    background-color gc(white1)
+    > .image
+      display block
+      overflow auto
+      height calc(100% - 43px) !important
+      > .cr-slide-wrap
+        display none !important
